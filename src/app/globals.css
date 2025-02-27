@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #3b82f6;
+  --secondary: #64748b;
+  --accent: #f59e0b;
+  --gray-light: #e5e7eb;
+  --gray-medium: #9ca3af;
+  --gray-dark: #4b5563;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Override dark mode to still use light theme */
+    --background: #ffffff;
+    --foreground: #171717;
+    --primary: #3b82f6;
+    --secondary: #64748b;
+    --accent: #f59e0b;
+    --gray-light: #e5e7eb;
+    --gray-medium: #9ca3af;
+    --gray-dark: #4b5563;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: #ffffff !important; /* Force white background */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header styles */
+header {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
