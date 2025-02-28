@@ -75,7 +75,7 @@ export default function RegistrationPage() {
 
                 <div className="flex justify-between items-center border-b pb-3 pt-2">
                   <span>Emergency trusted contact</span>
-                  <Link href="/registration/emergency-contact" className="bg-blue-700 text-white px-4 py-1.5 rounded text-sm">
+                  <Link href="/registration/emergency-trusted-contact" className="bg-blue-700 text-white px-4 py-1.5 rounded text-sm">
                     Manage
                   </Link>
                 </div>
