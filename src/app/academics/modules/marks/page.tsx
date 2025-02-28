@@ -97,7 +97,7 @@ export default function ModuleMarksPage() {
                     <tr>
                       <td className="p-1 border">HE7</td>
                       <td className="p-1 border">180</td>
-                      <td className="p-1 border">15</td>
+                      <td className="p-1 border">60</td>
                       <td className="p-1 border"></td>
                       <td className="p-1 border"></td>
                       <td className="p-1 border">60</td>
