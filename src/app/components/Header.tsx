@@ -1,5 +1,6 @@
 import { HomeIcon, Bars3Icon, EnvelopeIcon, ChatBubbleLeftRightIcon, BellIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -103,6 +104,7 @@ export default function Header() {
           
           <a href="#" className="text-sm hover:underline">Privacy</a>
           <a href="#" className="text-sm hover:underline">Accessibility</a>
+          <Link href="/academics" className="text-sm hover:underline">Academics</Link>
         </nav>
       </div>
     </header>
