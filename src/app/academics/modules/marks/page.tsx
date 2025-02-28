@@ -16,24 +16,38 @@ export default function ModuleMarksPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      {/* Navigation Bar */}
-      <nav className="bg-blue-900 text-white p-3 flex items-center space-x-4">
-        <div className="flex items-center">
-          <img src="https://sits.surrey.ac.uk/live/sits.urd/images/sv-header.png" alt="Surrey Logo" className="h-8 mr-2" />
-          <span className="text-sm font-bold">SURREY SELF-SERVICE</span>
+      {/* Main Header - Blue Navigation Bar */}
+      <header className="bg-blue-900 text-white py-3 px-4">
+        <div className="container mx-auto flex items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/">
+              <div className="flex items-center">
+                <img
+                  src="/images/surrey-logo.svg"
+                  alt="University of Surrey"
+                  className="h-9 mr-6"
+                />
+              </div>
+            </Link>
+            <nav className="hidden md:flex space-x-6">
+              <Link href="/" className="text-white hover:text-gray-200">Welcome</Link>
+              <Link href="#" className="text-white hover:text-gray-200">Applications</Link>
+              <Link href="/registration" className="text-white hover:text-gray-200 font-bold">Registration</Link>
+              <Link href="#" className="text-white hover:text-gray-200">Extenuating Circumstances</Link>
+              <Link href="#" className="text-white hover:text-gray-200">Letters</Link>
+              <Link href="/academics/modules" className="text-white hover:text-gray-200">Modules</Link>
+              <Link href="#" className="text-white hover:text-gray-200">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </nav>
+          </div>
+          <div className="text-white text-sm">
+            Melroy V Menezes - 6857373
+          </div>
         </div>
-        <div className="ml-6 flex items-center space-x-6 text-sm">
-          <a href="#" className="px-2">Welcome</a>
-          <a href="#" className="px-2">Applications</a>
-          <a href="#" className="px-2"><li>
-            <Link href="/registration" className="hover:underline">Registration</Link>
-          </li></a>
-          <a href="#" className="px-2">Extenuating Circumstances</a>
-          <a href="#" className="px-2">Letters</a>
-          <a href="#" className="px-2 font-bold">Modules</a>
-          <button className="px-2">+</button>
-        </div>
-      </nav>
+      </header>
 
       {/* Page Content */}
       <div className="flex-grow p-4 max-w-7xl mx-auto w-full">
