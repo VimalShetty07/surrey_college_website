@@ -23,7 +23,7 @@ export default function ModuleMarksPage() {
             <Link href="/">
               <div className="flex items-center">
                 <img
-                  src="/images/logo.svg"
+                  src="https://sits.surrey.ac.uk/live/sits.urd/images/sv-header.png"
                   alt="University of Surrey"
                   className="h-9 mr-6"
                 />
