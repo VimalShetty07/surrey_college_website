@@ -228,6 +228,7 @@ export default function ModuleMarksPage() {
                   </tr>
                   
                   <tr>
+                    
                     <td className="p-1 border">2024/25</td>
                     <td className="p-1 border">MAN3010</td>
                     <td className="p-1 border">Topics In Middle Eastern AI</td>
