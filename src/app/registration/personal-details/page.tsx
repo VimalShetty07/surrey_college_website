@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+// Note: We can't use metadata here because this is a client component
+// The title is set by the parent layout.tsx
+
 export default function PersonalDetailsPage() {
   // Initial form state based on the image
   const [formData, setFormData] = useState({
