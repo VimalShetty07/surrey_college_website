@@ -25,7 +25,9 @@ export default function ModuleMarksPage() {
         <div className="ml-6 flex items-center space-x-6 text-sm">
           <a href="#" className="px-2">Welcome</a>
           <a href="#" className="px-2">Applications</a>
-          <a href="#" className="px-2">Registration</a>
+          <li>
+            <Link href="/registration" className="hover:underline">Registration</Link>
+          </li>
           <a href="#" className="px-2">Extenuating Circumstances</a>
           <a href="#" className="px-2">Letters</a>
           <a href="#" className="px-2 font-bold">Modules</a>
@@ -84,7 +86,7 @@ export default function ModuleMarksPage() {
                       <td className="p-1 border"></td>
                       <td className="p-1 border"></td>
                       <td className="p-1 border">60</td>
-                      <td className="p-1 border">74.5</td>
+                      <td className="p-1 border">83</td>
                       <td className="p-1 border"></td>
                     </tr>
                   </tbody>
@@ -98,7 +100,7 @@ export default function ModuleMarksPage() {
         </div>
         
         {/* Provisional marks Section */}
-        <div className="bg-white border mb-4">
+        {/* <div className="bg-white border mb-4">
           <div className="bg-gray-200 px-3 py-2 text-sm font-semibold">Provisional marks</div>
           <div className="p-3">
             <div className="overflow-x-auto">
@@ -136,7 +138,6 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                   </tr>
                   
-                  {/* Additional module entries would go here */}
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">EEE3064</td>
@@ -364,7 +365,7 @@ export default function ModuleMarksPage() {
               </table>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Ratified marks Section */}
         <div className="bg-white border mb-4">

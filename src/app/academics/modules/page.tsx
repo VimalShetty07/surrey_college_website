@@ -23,7 +23,9 @@ export default function ModulesPage() {
           <ul className="hidden md:flex space-x-6">
             <li>Welcome</li>
             <li>Applications</li>
-            <li>Registration</li>
+            <li>
+            <Link href="/registration" className="hover:underline">Registration</Link>
+          </li>
             <li>Extenuating Circumstances</li>
             <li>Letters</li>
             <li className="font-bold">Modules</li>

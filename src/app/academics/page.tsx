@@ -5,47 +5,27 @@ export default function AcademicsPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="bg-[#003E74] text-white">
-        <div className="container mx-auto px-4 py-3 flex items-center">
-          <Link href="/" className="flex items-center mr-10">
-            <img 
-              src="/images/surrey-logo.svg" 
-              alt="Surrey Self-Service" 
-              className="h-10"
-            />
-          </Link>
-          <nav className="flex space-x-8">
-            <Link href="/" className="text-white hover:text-gray-200">
-              Welcome
-            </Link>
-            <Link href="#" className="text-white hover:text-gray-200">
-              Applications
-            </Link>
-            <div className="relative group">
-              <Link href="/registration" className="text-white hover:text-gray-200 flex items-center">
-                Registration
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </Link>
-            </div>
-            <Link href="#" className="text-white hover:text-gray-200">
-              Extenuating Circumstances
-            </Link>
-            <Link href="#" className="text-white hover:text-gray-200">
-              Letters
-            </Link>
-            <Link href="/academics/modules" className="text-white hover:text-gray-200 font-medium">
-              Modules
-            </Link>
-            <button className="text-white hover:text-gray-200">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-              </svg>
-            </button>
-          </nav>
+      <nav className="bg-blue-900 text-white p-4 flex items-center">
+        {/* Logo */}
+        <div className="flex items-center">
+          <div className="bg-white h-8 w-24 mr-4 flex items-center justify-center">
+            <span className="text-blue-900 font-bold">SURREY</span>
+          </div>
         </div>
-      </header>
+        
+        {/* Navigation menu - moved next to logo */}
+        <ul className="flex space-x-6 ml-4">
+          <li>Welcome</li>
+          <li>Applications</li>
+          <li>
+            <Link href="/registration" className="hover:underline">Registration</Link>
+          </li>
+          <li>Letters</li>
+          <li>
+            <Link href="/academics/modules" className="hover:underline">Modules</Link>
+          </li>
+        </ul>
+      </nav>
 
       {/* Main Content */}
       <div className="container mx-auto p-6">
