@@ -13,7 +13,7 @@ export default function TimetablePage() {
         <Link href="/">
           <div className="flex items-center">
             <img 
-              src="/images/surrey-logo.svg" 
+              src="/images/logo.svg" 
               alt="University of Surrey" 
               className="h-10"
             />
