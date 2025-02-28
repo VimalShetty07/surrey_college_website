@@ -1,0 +1,11 @@
+<svg width="80" height="30" viewBox="0 0 80 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- CMIS text -->
+  <path d="M10 5C6 5 3 8 3 12C3 16 6 19 10 19C14 19 17 16 17 12C17 8 14 5 10 5ZM10 17C7 17 5 15 5 12C5 9 7 7 10 7C13 7 15 9 15 12C15 15 13 17 10 17Z" fill="#FF5733"/>
+  <path d="M22 5H20V19H22V5Z" fill="#FF5733"/>
+  <path d="M25 5H27V17H34V19H25V5Z" fill="#FF5733"/>
+  <path d="M43 5C39 5 36 8 36 12C36 16 39 19 43 19C47 19 50 16 50 12C50 8 47 5 43 5ZM43 17C40 17 38 15 38 12C38 9 40 7 43 7C46 7 48 9 48 12C48 15 46 17 43 17Z" fill="#FF5733"/>
+  
+  <!-- 'go' part in different color -->
+  <path d="M65 8C61 8 58 10 58 14C58 18 61 20 65 20C69 20 72 18 72 14C72 10 69 8 65 8ZM65 18C62 18 60 16 60 14C60 12 62 10 65 10C68 10 70 12 70 14C70 16 68 18 65 18Z" fill="#3FBD3F"/>
+  <path d="M75 8L73 8V20H75V16H77V14H75V8Z" fill="#3FBD3F"/>
+</svg> 

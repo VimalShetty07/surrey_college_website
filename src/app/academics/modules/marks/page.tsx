@@ -80,10 +80,10 @@ export default function ModuleMarksPage() {
                     <tr>
                       <td className="p-1 border">HE7</td>
                       <td className="p-1 border">180</td>
-                      <td className="p-1 border">15</td>
+                      <td className="p-1 border">60</td>
                       <td className="p-1 border"></td>
                       <td className="p-1 border"></td>
-                      <td className="p-1 border">15</td>
+                      <td className="p-1 border">60</td>
                       <td className="p-1 border">74.5</td>
                       <td className="p-1 border"></td>
                     </tr>
@@ -126,14 +126,14 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border">Coursework Assignment</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border"></td>
                   </tr>
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border">2 Hr Integrated (Open Book) Examination</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border"></td>
                   </tr>
                   
                   {/* Additional module entries would go here */}
@@ -169,7 +169,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border">Coursework 1 - Speech Processing</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border"></td>
                   </tr>
                   <tr>
                     <td className="p-1 border"></td>
@@ -183,7 +183,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border">2HR Integrated Close Book Exam</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border"></td>
                   </tr>
                   
                   <tr>
@@ -197,14 +197,14 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border">Coursework</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border"></td>
                   </tr>
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border">2 Hr Integrated (Open Book) Examination</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border"></td>
                   </tr>
                   
                   <tr>
@@ -392,25 +392,16 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border">EEE3030</td>
                     <td className="p-1 border">Speech & Audio Processing & Recognition</td>
                     <td className="p-1 border">15</td>
-                    <td className="p-1 border">11</td>
-                    <td className="p-1 border">Fail (Mitigating)</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">83</td>
+                    <td className="p-1 border">Pass</td>
+                    <td className="p-1 border">15</td>
                   </tr>
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">0</td>
-                    <td className="p-1 border">10% weighting</td>
-                    <td className="p-1 border"></td>
-                  </tr>
-                  <tr>
-                    <td className="p-1 border"></td>
-                    <td className="p-1 border"></td>
-                    <td className="p-1 border">1st Attempt</td>
-                    <td className="p-1 border"></td>
-                    <td className="p-1 border">76</td>
+                    <td className="p-1 border">77</td>
                     <td className="p-1 border">15% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -419,8 +410,17 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">89</td>
+                    <td className="p-1 border">15% weighting</td>
                     <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">84</td>
+                    <td className="p-1 border">70% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
                   
@@ -447,18 +447,18 @@ export default function ModuleMarksPage() {
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">EEE3066</td>
-                    <td className="p-1 border">Fundamentals Of Machine Learning</td>
+                    <td className="p-1 border">Fundamentals Of Machine Learning 2024/25</td>
                     <td className="p-1 border">15</td>
-                    <td className="p-1 border">0</td>
-                    <td className="p-1 border">Fail (Mitigating)</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">90</td>
+                    <td className="p-1 border">Pass</td>
+                    <td className="p-1 border">15</td>
                   </tr>
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">76</td>
                     <td className="p-1 border">20% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -467,7 +467,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">93</td>
                     <td className="p-1 border">80% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -494,18 +494,18 @@ export default function ModuleMarksPage() {
                   <tr>
                     <td className="p-1 border">2024/25</td>
                     <td className="p-1 border">MAN3010</td>
-                    <td className="p-1 border">Topics In Middle Eastern AI</td>
+                    <td className="p-1 border">Topics In PeopleCentered AI</td>
                     <td className="p-1 border">15</td>
-                    <td className="p-1 border">67</td>
+                    <td className="p-1 border">85</td>
                     <td className="p-1 border">Pass</td>
-                    <td className="p-1 border"></td>
+                    <td className="p-1 border">15</td>
                   </tr>
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">68</td>
+                    <td className="p-1 border">89</td>
                     <td className="p-1 border">40% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -514,7 +514,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">66</td>
+                    <td className="p-1 border">83</td>
                     <td className="p-1 border">60% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -524,16 +524,16 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border">EEE3032</td>
                     <td className="p-1 border">Computer Vision And Pattern Recognition</td>
                     <td className="p-1 border">15</td>
-                    <td className="p-1 border">0</td>
-                    <td className="p-1 border">Fail (Mitigating)</td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">86</td>
+                    <td className="p-1 border">Pass</td>
+                    <td className="p-1 border">15</td>
                   </tr>
                   <tr>
                     <td className="p-1 border"></td>
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">80</td>
                     <td className="p-1 border">20% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -542,7 +542,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">0</td>
+                    <td className="p-1 border">87</td>
                     <td className="p-1 border">80% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -552,7 +552,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">Reassessment</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border"></td>
+                    <td className="p-1 border">0</td>
                     <td className="p-1 border">20% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -561,7 +561,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">Reassessment</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border"></td>
+                    <td className="p-1 border">0</td>
                     <td className="p-1 border">80% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>

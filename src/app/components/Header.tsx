@@ -49,7 +49,7 @@ export default function Header() {
       <div className="px-6 py-2">
         <nav className="flex space-x-6">
           {/* First group - Main services */}
-          <a href="#" className="text-sm hover:underline">My Timetable</a>
+          <a href="/timetable" className="text-sm hover:underline">My Timetable</a>
           
           {/* Dropdown for Library */}
           <div className="relative group">
