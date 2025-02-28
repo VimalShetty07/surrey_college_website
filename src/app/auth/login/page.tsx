@@ -22,7 +22,7 @@ export default function LoginPage() {
     }
     
     // Demo credentials - in a real app, this would be a server-side check
-    if (email === 'melroymenezes372@gmail.com' && password === 'AZaz09.,()') {
+    if (email === 'mm04177@surrey.ac.uk' && password === 'AZaz09.,()') {
       // Set a cookie for authentication (30 day expiration)
       Cookies.set('isAuthenticated', 'true', { expires: 30 });
       
