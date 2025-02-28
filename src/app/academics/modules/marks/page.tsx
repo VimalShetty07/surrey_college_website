@@ -23,7 +23,7 @@ export default function ModuleMarksPage() {
             <Link href="/">
               <div className="flex items-center">
                 <img
-                  src="/images/surrey-logo.svg"
+                  src="/images/logo.svg"
                   alt="University of Surrey"
                   className="h-9 mr-6"
                 />
@@ -41,6 +41,7 @@ export default function ModuleMarksPage() {
                   <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
                 </svg>
               </Link>
+              
             </nav>
           </div>
           <div className="text-white text-sm">
@@ -100,7 +101,7 @@ export default function ModuleMarksPage() {
                       <td className="p-1 border"></td>
                       <td className="p-1 border"></td>
                       <td className="p-1 border">60</td>
-                      <td className="p-1 border">86</td>
+                      <td className="p-1 border">83</td>
                       <td className="p-1 border"></td>
                     </tr>
                   </tbody>
@@ -142,7 +143,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border">EEE3030</td>
                     <td className="p-1 border">Speech & Audio Processing & Recognition</td>
                     <td className="p-1 border">15</td>
-                    <td className="p-1 border">84</td>
+                    <td className="p-1 border">81</td>
                     <td className="p-1 border">Pass</td>
                     <td className="p-1 border">15</td>
                   </tr>
@@ -160,7 +161,7 @@ export default function ModuleMarksPage() {
                     <td className="p-1 border"></td>
                     <td className="p-1 border">1st Attempt</td>
                     <td className="p-1 border"></td>
-                    <td className="p-1 border">89</td>
+                    <td className="p-1 border">86</td>
                     <td className="p-1 border">15% weighting</td>
                     <td className="p-1 border"></td>
                   </tr>
@@ -195,7 +196,7 @@ export default function ModuleMarksPage() {
                   </tr>
                   
                   <tr>
-                    <td className="p-1 border"></td>
+                    <td className="p-1 border">2024/25</td>
                     <td className="p-1 border">EEE3066</td>
                     <td className="p-1 border">Fundamentals Of Machine Learning</td>
                     <td className="p-1 border">15</td>
