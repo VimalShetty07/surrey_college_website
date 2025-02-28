@@ -72,7 +72,7 @@ export default function ModuleMarksPage() {
         
         {/* Module and assessment marks Section */}
         <div className="bg-white border mb-4">
-          <div className="bg-gray-200 px-3 py-2 text-sm font-semibold">Module and assessment marks</div>
+          <div className="bg-gray-200 px-3 py-2 text-sm font-semibold">Module and assessment marks  :               Melroy V Menezes (6957373)</div>
           <div className="p-3 flex">
             <div className="w-1/2">
               <p className="text-xs mb-1">The weighted averages of your agreed marks at each level are shown here. The level average is correct when all of your marks have been entered and agreed by the Board of Examiners at the end of each level of study.</p>
