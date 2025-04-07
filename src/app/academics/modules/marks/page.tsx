@@ -55,8 +55,6 @@ export default function ModuleMarksPage() {
        <div className="flex-grow p-4 max-w-7xl mx-auto w-full">
          <h2 className="text-lg font-semibold mb-4 pl-2">My Modules</h2>
          
-         {/* Progression Section */}
-         <div className="bg-white border mb-4">
 
 
     
