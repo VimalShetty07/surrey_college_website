@@ -50,25 +50,7 @@ export default function ModuleMarksPage() {
         </div>
       </header>
 
-      {/* Page Content */}
-      <div className="flex-grow p-4 max-w-7xl mx-auto w-full">
-        <h2 className="text-lg font-semibold mb-4 pl-2">My Modules</h2>
-        
-        {/* Progression Section */}
-        <div className="bg-white border mb-4">
-          <div className="bg-gray-200 px-3 py-2 text-sm font-semibold">Progression</div>
-          <div className="p-3 flex">
-            <div className="w-1/2">
-              <p className="text-xs mb-2">Your progression status describes your current progression outcome from your recent assessments.</p>
-              <p className="text-xs mb-2">Further explanations on your progression status can be found <a href="#" className="text-blue-600">here</a>.</p>
-            </div>
-            <div className="w-1/2 bg-gray-100 p-3">
-              <div className="text-sm font-semibold mb-2">Progression status</div>
-              <p className="text-xs mb-2">You have approved Extenuating Circumstances for 60 credits or less, and will need to take these in the Late Summer Assessment period.</p>
-              <p className="text-xs">Please refer to the FAQ section for further information.</p>
-            </div>
-          </div>
-        </div>
+    
         
         {/* Module and assessment marks Section */}
         <div className="bg-white border mb-4">
