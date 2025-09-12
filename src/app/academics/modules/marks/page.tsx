@@ -1,6 +1,6 @@
 'use client';
 
-import Link from "next/link";
+// import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Cookies from 'js-cookie';
 
@@ -17,7 +17,7 @@ export default function ModuleMarksPage() {
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Main Header - Blue Navigation Bar */}
-      <header className="bg-blue-900 text-white py-3 px-4">
+      {/* <header className="bg-blue-900 text-white py-3 px-4">
         <div className="container mx-auto flex items-center justify-between">
           <div className="flex items-center">
             <Link href="/">
@@ -48,14 +48,14 @@ export default function ModuleMarksPage() {
             Melroy V Menezes - 6857373
           </div>
         </div>
-      </header>
+      </header> */}
 
       {/* Page Content */}
       <div className="flex-grow p-4 max-w-7xl mx-auto w-full">
-        <h2 className="text-lg font-semibold mb-4 pl-2">My Modules</h2>
+        {/* <h2 className="text-lg font-semibold mb-4 pl-2">My Modules</h2> */}
         
         {/* Progression Section */}
-        <div className="bg-white border mb-4">
+        {/* <div className="bg-white border mb-4">
           <div className="bg-gray-200 px-3 py-2 text-sm font-semibold">Progression</div>
           <div className="p-3 flex">
             <div className="w-1/2">
@@ -68,7 +68,7 @@ export default function ModuleMarksPage() {
               <p className="text-xs">Please refer to the FAQ section for further information.</p>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Module and assessment marks Section */}
         <div className="bg-white border mb-4">
@@ -97,10 +97,10 @@ export default function ModuleMarksPage() {
                     <tr>
                       <td className="p-1 border">HE7</td>
                       <td className="p-1 border">180</td>
-                      <td className="p-1 border">60</td>
+                      <td className="p-1 border">120</td>
                       <td className="p-1 border"></td>
                       <td className="p-1 border"></td>
-                      <td className="p-1 border">60</td>
+                      <td className="p-1 border">120</td>
                       <td className="p-1 border">83</td>
                       <td className="p-1 border"></td>
                     </tr>
@@ -321,10 +321,214 @@ export default function ModuleMarksPage() {
               </table>
             </div>
           </div>
+        {/* </div>
+        <div className="bg-white border mb-4"> */}
+        {/* <div className="bg-gray-200 px-3 py-2 text-sm font-semibold">Ratified marks</div> */}
+        <div className="p-3">
+            <div className="overflow-x-auto">
+              <table className="w-full text-xs border">
+                <thead>
+                  <tr className="bg-gray-200">
+                    <th className="p-1 border text-left">Year</th>
+                    <th className="p-1 border text-left">Module code</th>
+                    <th className="p-1 border text-left">Module title</th>
+                    <th className="p-1 border text-left">Credits attempted</th>
+                    <th className="p-1 border text-left">Mark</th>
+                    <th className="p-1 border text-left">Grade</th>
+                    <th className="p-1 border text-left">Credits achieved</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="p-1 border" colSpan={7}>Level M (Masters)</td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border">2024/25</td>
+                    <td className="p-1 border">EEEM073</td>
+                    <td className="p-1 border">Ai in sustainability</td>
+                    <td className="p-1 border">15</td>
+                    <td className="p-1 border">87</td>
+                    <td className="p-1 border">Pass</td>
+                    <td className="p-1 border">15</td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">80</td>
+                    <td className="p-1 border">15% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">80</td>
+                    <td className="p-1 border">15% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">90</td>
+                    <td className="p-1 border">70% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  
+                  {/* Additional ratified marks entries */}
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">Reassessment</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">15% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">Reassessment</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">70% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td className="p-1 border">2024/25</td>
+                    <td className="p-1 border">EEEM068</td>
+                    <td className="p-1 border">Applied Machine Learning</td>
+                    <td className="p-1 border">15</td>
+                    <td className="p-1 border">82</td>
+                    <td className="p-1 border">Pass</td>
+                    <td className="p-1 border">15</td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">78</td>
+                    <td className="p-1 border">20% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">83</td>
+                    <td className="p-1 border">80% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">Reassessment</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">20% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">Reassessment</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">80% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  
+                  <tr>
+                    
+                    <td className="p-1 border">2024/25</td>
+                    <td className="p-1 border">EEEM069</td>
+                    <td className="p-1 border">Ai in health</td>
+                    <td className="p-1 border">15</td>
+                    <td className="p-1 border">78</td>
+                    <td className="p-1 border">Pass</td>
+                    <td className="p-1 border">15</td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">70</td>
+                    <td className="p-1 border">40% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">83</td>
+                    <td className="p-1 border">60% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td className="p-1 border">2024/25</td>
+                    <td className="p-1 border">EEEM072</td>
+                    <td className="p-1 border">Reasearch professionalism and innovation</td>
+                    <td className="p-1 border">15</td>
+                    <td className="p-1 border">82</td>
+                    <td className="p-1 border">Pass</td>
+                    <td className="p-1 border">15</td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">62</td>
+                    <td className="p-1 border">20% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">1st Attempt</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">87</td>
+                    <td className="p-1 border">80% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">Reassessment</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">20% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                  <tr>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">Reassessment</td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border"></td>
+                    <td className="p-1 border">80% weighting</td>
+                    <td className="p-1 border"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
         
         {/* Awards Section */}
-        <div className="bg-white border mb-4">
+        {/* <div className="bg-white border mb-4">
           <div className="bg-gray-200 px-3 py-2 text-sm font-semibold">Awards</div>
           <div className="p-3">
             <p className="text-xs">Any conferred awards are shown here:</p>
@@ -334,7 +538,7 @@ export default function ModuleMarksPage() {
               <p className="text-xs">No Conferred award records to show</p>
             </div>
           </div>
-        </div>
+        </div> */}
         
         {/* Back and Contact buttons */}
         <div className="flex justify-between mt-4">
