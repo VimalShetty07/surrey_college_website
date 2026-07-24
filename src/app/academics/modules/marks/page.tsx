@@ -1,18 +1,8 @@
 'use client';
 
-// import Link from "next/link";
-import { useRouter } from "next/navigation";
-import Cookies from 'js-cookie';
+import LogoutButton from "@/app/components/LogoutButton";
 
 export default function ModuleMarksPage() {
-  const router = useRouter();
-  
-  const handleLogout = () => {
-    // Remove both cookie and localStorage for complete logout
-    Cookies.remove('isAuthenticated');
-    localStorage.removeItem('isAuthenticated');
-    router.push('/auth/login');
-  };
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
@@ -536,16 +526,7 @@ export default function ModuleMarksPage() {
       {/* Footer */}
       <footer className="bg-gray-100 text-xs text-gray-600 py-2 px-4 border-t mt-auto text-right">
         Logged in as Melroy Menezes (6857373) |{" "}
-        <a 
-          href="#" 
-          onClick={(e) => {
-            e.preventDefault();
-            handleLogout();
-          }}
-          className="text-blue-600"
-        >
-          Logout
-        </a>
+        <LogoutButton className="text-blue-600 hover:underline">Logout</LogoutButton>
       </footer>
     </div>
   );

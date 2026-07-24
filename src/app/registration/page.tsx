@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import LogoutButton from '@/app/components/LogoutButton';
 
 export default function RegistrationPage() {
   return (
@@ -138,7 +139,7 @@ export default function RegistrationPage() {
       <div className="mt-auto bg-gray-100 border-t py-2 px-4">
         <div className="container mx-auto flex justify-between text-sm text-gray-600">
           <div>Logged in: Melroy Menezes (6857373)</div>
-          <Link href="/auth/login" className="text-blue-600 hover:underline">Logout</Link>
+          <LogoutButton>Logout</LogoutButton>
         </div>
       </div>
     </div>

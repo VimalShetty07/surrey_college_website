@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
+import LogoutButton from "@/app/components/LogoutButton";
 
 export default function AcademicsPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
-      <nav className="bg-blue-900 text-white p-4 flex items-center">
+      <nav className="bg-blue-900 text-white p-4 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
           <div className="bg-white h-8 w-24 mr-4 flex items-center justify-center">
             <span className="text-blue-900 font-bold">SURREY</span>
           </div>
-        </div>
         
         {/* Navigation menu - moved next to logo */}
         <ul className="flex space-x-6 ml-4">
@@ -25,6 +25,10 @@ export default function AcademicsPage() {
             <Link href="/academics/modules" className="hover:underline">Modules</Link>
           </li>
         </ul>
+        </div>
+        <LogoutButton className="text-white hover:text-gray-200 text-sm">
+          Sign Out
+        </LogoutButton>
       </nav>
 
       {/* Main Content */}

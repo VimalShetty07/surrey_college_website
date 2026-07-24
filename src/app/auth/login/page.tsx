@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Cookies from 'js-cookie';
+import { DEMO_CREDENTIALS, login, validateCredentials } from '@/lib/auth';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -14,25 +14,19 @@ export default function LoginPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Simple validation
+
     if (!email || !password) {
       setError('Please enter both email and password');
       return;
     }
-    
-    // Demo credentials - in a real app, this would be a server-side check
-    if (email === 'mm04177@surrey.ac.uk' && password === 'AZaz09.,()') {
-      // Set a cookie for authentication (30 day expiration)
-      Cookies.set('isAuthenticated', 'true', { expires: 30 });
-      
-      // For backward compatibility with existing code
-      localStorage.setItem('isAuthenticated', 'true');
-      
-      // Redirect to the module marks page
+
+    if (validateCredentials(email, password)) {
+      login();
       router.push('/');
     } else {
-      setError('Invalid credentials. Try student@surrey.ac.uk / password');
+      setError(
+        `Invalid credentials. Try ${DEMO_CREDENTIALS.email} / ${DEMO_CREDENTIALS.password}`
+      );
     }
   };
 
@@ -40,8 +34,8 @@ export default function LoginPage() {
     <div className="login-container">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image 
-          src="/images/back.jpg" 
+        <Image
+          src="/images/back.jpg"
           alt="University of Surrey Background"
           fill
           style={{ objectFit: 'cover' }}
@@ -54,43 +48,46 @@ export default function LoginPage() {
       <div className="login-box">
         <div className="login-content">
           <div className="flex justify-center mb-4">
-            <img 
-              src="https://aadcdn.msauthimages.net/c1c6b6c8-dhqgjg7s9-jxc3mxgtkdrnpqe5jss2-pmud78k-emhk/logintenantbranding/0/bannerlogo?ts=636692361690074033" 
-              alt="University of Surrey" 
+            <img
+              src="https://aadcdn.msauthimages.net/c1c6b6c8-dhqgjg7s9-jxc3mxgtkdrnpqe5jss2-pmud78k-emhk/logintenantbranding/0/bannerlogo?ts=636692361690074033"
+              alt="University of Surrey"
               className="logo w-20 h-auto"
             />
           </div>
-          
+
           <h2 className="text-2xl font-bold mb-6">Sign in</h2>
-          
+
           {error && (
             <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 mb-4 text-sm">
               {error}
             </div>
           )}
-          
+
           <form onSubmit={handleSubmit}>
-            <input 
-              type="email" 
+            <input
+              type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="username@surrey.ac.uk" 
-              className="input-box w-full p-3 text-base border border-gray-300 mb-2" 
+              placeholder="username@surrey.ac.uk"
+              className="input-box w-full p-3 text-base border border-gray-300 mb-2"
             />
-            
-            <input 
-              type={showPassword ? "text" : "password"} 
+
+            <input
+              type={showPassword ? 'text' : 'password'}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="Password" 
-              className="input-box w-full p-3 text-base border border-gray-300 mb-2" 
+              placeholder="Password"
+              className="input-box w-full p-3 text-base border border-gray-300 mb-2"
             />
-            
-            <a href="#" className="forgot-password block text-left text-sm text-[#0078d4] no-underline mb-4">
+
+            <a
+              href="#"
+              className="forgot-password block text-left text-sm text-[#0078d4] no-underline mb-4"
+            >
               Can't access your account?
             </a>
-            
-            <button 
+
+            <button
               type="submit"
               className="next-button w-full bg-[#0078d4] text-white py-3 text-base border-0 cursor-pointer mb-4 hover:bg-blue-600"
             >
@@ -110,9 +107,11 @@ export default function LoginPage() {
           <button className="sign-in-options w-full bg-white text-gray-700 py-2 text-sm border border-gray-300 cursor-pointer flex items-center justify-center">
             <span className="mr-2">🔑</span> Sign-in options
           </button>
-          
+
           <div className="mt-4 pt-4 text-center text-xs text-gray-500">
-            <p>Demo credentials: student@surrey.ac.uk / password</p>
+            <p>
+              Demo credentials: {DEMO_CREDENTIALS.email} / {DEMO_CREDENTIALS.password}
+            </p>
           </div>
         </div>
       </div>
@@ -144,4 +143,4 @@ export default function LoginPage() {
       `}</style>
     </div>
   );
-} 
+}

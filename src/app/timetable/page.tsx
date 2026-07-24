@@ -1,11 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import LogoutButton from '@/app/components/LogoutButton';
 
 export default function TimetablePage() {
-  const router = useRouter();
-  
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Main Header */}
@@ -25,6 +23,9 @@ export default function TimetablePage() {
           <Link href="#">Bookings</Link>
           <Link href="#">Administration</Link>
           <Link href="#">Help</Link>
+          <LogoutButton className="text-blue-800 hover:underline font-medium">
+            Sign Out
+          </LogoutButton>
         </nav>
       </header>
 

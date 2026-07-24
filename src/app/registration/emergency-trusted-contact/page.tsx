@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import LogoutButton from '@/app/components/LogoutButton';
 
 export default function EmergencyTrustedContactPage() {
   // Initial form state
@@ -46,8 +47,9 @@ export default function EmergencyTrustedContactPage() {
               </Link>
             </nav>
           </div>
-          <div className="text-white text-sm">
-            Melroy V Menezes -6857373
+          <div className="flex items-center space-x-4 text-white text-sm">
+            <span>Melroy V Menezes -6857373</span>
+            <LogoutButton className="text-white hover:text-gray-200">Sign Out</LogoutButton>
           </div>
         </div>
       </header>

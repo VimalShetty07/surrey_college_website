@@ -2,20 +2,22 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // Check if the user is authenticated by looking for a token in cookies
   const isAuthenticated = request.cookies.has('isAuthenticated');
-  
-  // If the request is for the login page, allow it to proceed
-  if (request.nextUrl.pathname.startsWith('/auth/login')) {
+  const isLoginPage = request.nextUrl.pathname.startsWith('/auth/login');
+
+  // Logged-in users hitting login go home
+  if (isLoginPage && isAuthenticated) {
+    return NextResponse.redirect(new URL('/', request.url));
+  }
+
+  if (isLoginPage) {
     return NextResponse.next();
   }
-  
-  // If the user is not authenticated and trying to access a protected route, redirect to login
+
   if (!isAuthenticated) {
     return NextResponse.redirect(new URL('/auth/login', request.url));
   }
-  
-  // Allow authenticated requests to proceed
+
   return NextResponse.next();
 }
 

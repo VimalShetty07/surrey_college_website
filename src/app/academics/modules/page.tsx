@@ -1,19 +1,9 @@
 'use client';
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
-import Cookies from 'js-cookie';
+import LogoutButton from "@/app/components/LogoutButton";
 
 export default function ModulesPage() {
-  const router = useRouter();
-  
-  const handleLogout = () => {
-    // Remove both cookie and localStorage for complete logout
-    Cookies.remove('isAuthenticated');
-    localStorage.removeItem('isAuthenticated');
-    router.push('/auth/login');
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Navigation Bar */}
@@ -30,12 +20,9 @@ export default function ModulesPage() {
             <li>Letters</li>
             <li className="font-bold">Modules</li>
           </ul>
-          <button 
-            onClick={handleLogout}
-            className="text-white hover:text-gray-200 text-sm"
-          >
+          <LogoutButton className="text-white hover:text-gray-200 text-sm">
             Sign Out
-          </button>
+          </LogoutButton>
         </div>
       </nav>
 
@@ -101,16 +88,7 @@ export default function ModulesPage() {
       {/* Footer */}
       <footer className="text-right text-sm text-gray-500 p-4">
         Logged in: Melroy Menezes (6857373) |{" "}
-        <a 
-          href="#" 
-          onClick={(e) => {
-            e.preventDefault();
-            handleLogout();
-          }}
-          className="text-blue-600"
-        >
-          Logout
-        </a>
+        <LogoutButton className="text-blue-600 hover:underline">Logout</LogoutButton>
       </footer>
     </div>
   );
