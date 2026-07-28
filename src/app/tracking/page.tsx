@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Header from '../components/Header';
-import LogoutButton from '../components/LogoutButton';
+import LogoutButton from '@/app/components/LogoutButton';
 
 const shipments = [
   {
@@ -13,35 +12,40 @@ const shipments = [
     carrier: 'DTTC',
     trackingNumber: 'DTTC GB 9482 0173 5561 IN',
     from: 'Guildford, United Kingdom',
-    to: 'Mumbai, India',
-    expectedDelivery: '29 July 2026',
-    status: 'In transit — outbound to India',
+    to: 'Ashrived House, Venur, India 574242',
+    expectedDelivery: '1 August 2026',
+    status: 'In transit',
     weight: '0.45 kg',
     events: [
       {
-        date: '18 Jul 2026 · 09:14',
+        date: '18/07/2026 09:14',
         location: 'Guildford Mail Hub, UK',
-        detail: 'Shipment collected from University Awards Office',
+        detail: 'Collected from University Awards Office',
       },
       {
-        date: '19 Jul 2026 · 16:42',
+        date: '19/07/2026 16:42',
         location: 'Heathrow Export Facility, UK',
-        detail: 'Processed for international dispatch (Standard B)',
+        detail: 'Processed for international dispatch',
       },
       {
-        date: '21 Jul 2026 · 08:05',
+        date: '21/07/2026 08:05',
         location: 'DTTC International Sort Centre, UK',
-        detail: 'Departed United Kingdom — en route to India',
+        detail: 'Departed United Kingdom',
       },
       {
-        date: '23 Jul 2026 · 22:31',
+        date: '23/07/2026 22:31',
         location: 'Mumbai International Gateway, IN',
-        detail: 'Arrived in India — customs clearance in progress',
+        detail: 'Arrived in India — customs clearance',
       },
       {
-        date: '25 Jul 2026 · 11:18',
+        date: '25/07/2026 11:18',
         location: 'DTTC Mumbai Distribution Centre',
-        detail: 'Cleared customs — handed to domestic Standard B network',
+        detail: 'Cleared customs — routed to Venur (574242)',
+      },
+      {
+        date: '27/07/2026 15:40',
+        location: 'DTTC Mangaluru Regional Hub',
+        detail: 'In transit for delivery to Ashrived House, Venur',
       },
     ],
   },
@@ -53,30 +57,35 @@ const shipments = [
     carrier: 'DTTC',
     trackingNumber: 'DTTC GB 7710 4429 8836 IN',
     from: 'Guildford, United Kingdom',
-    to: 'Mumbai, India',
-    expectedDelivery: '29 July 2026',
-    status: 'In transit — domestic India leg',
+    to: 'Ashrived House, Venur, India 574242',
+    expectedDelivery: '1 August 2026',
+    status: 'In transit',
     weight: '0.32 kg',
     events: [
       {
-        date: '18 Jul 2026 · 09:20',
+        date: '18/07/2026 09:20',
         location: 'Guildford Mail Hub, UK',
-        detail: 'Shipment collected with degree certificate consignment',
+        detail: 'Collected with degree certificate consignment',
       },
       {
-        date: '20 Jul 2026 · 14:55',
+        date: '20/07/2026 14:55',
         location: 'Heathrow Export Facility, UK',
-        detail: 'Export scan complete — Standard B service',
+        detail: 'Export scan complete',
       },
       {
-        date: '22 Jul 2026 · 03:10',
+        date: '22/07/2026 03:10',
         location: 'Mumbai International Gateway, IN',
         detail: 'Arrived India — awaiting customs release',
       },
       {
-        date: '24 Jul 2026 · 17:40',
+        date: '24/07/2026 17:40',
         location: 'DTTC Mumbai Distribution Centre',
-        detail: 'Out for regional Standard B delivery routing',
+        detail: 'Cleared for domestic delivery to Venur',
+      },
+      {
+        date: '27/07/2026 16:05',
+        location: 'DTTC Mangaluru Regional Hub',
+        detail: 'Out for delivery routing to Ashrived House, Venur',
       },
     ],
   },
@@ -84,145 +93,183 @@ const shipments = [
 
 export default function TrackingPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
-      <div className="max-w-[1230px] mx-auto w-full bg-white min-h-screen flex flex-col">
-        <Header />
-
-        <main className="flex-grow px-6 py-8">
-          <div className="flex flex-wrap items-end justify-between gap-4 mb-6">
-            <div>
-              <p className="text-sm text-gray-500 mb-1">
-                <Link href="/" className="text-blue-700 hover:underline">
-                  Home
-                </Link>
-                {' / '}
+    <div className="min-h-screen flex flex-col bg-white">
+      <header className="bg-blue-900 text-white py-3 px-4">
+        <div className="container mx-auto flex items-center justify-between">
+          <div className="flex items-center">
+            <Link href="/">
+              <img
+                src="/images/surrey-logo.svg"
+                alt="University of Surrey"
+                className="h-9 mr-6"
+              />
+            </Link>
+            <nav className="hidden md:flex space-x-6">
+              <Link href="/" className="text-white hover:text-gray-200">
+                Welcome
+              </Link>
+              <Link href="/registration" className="text-white hover:text-gray-200">
+                Registration
+              </Link>
+              <Link href="/academics/modules" className="text-white hover:text-gray-200">
+                Modules
+              </Link>
+              <Link href="/tracking" className="text-white hover:text-gray-200 font-bold">
                 Tracking
-              </p>
-              <h1 className="text-2xl font-semibold text-gray-900">
-                Document Tracking
-              </h1>
-              <p className="text-sm text-gray-600 mt-1 max-w-2xl">
-                Track degree certificates and related award documents couriered from
-                the United Kingdom to India via DTTC Standard B.
+              </Link>
+            </nav>
+          </div>
+          <LogoutButton className="text-white hover:text-gray-200 text-sm">
+            Sign Out
+          </LogoutButton>
+        </div>
+      </header>
+
+      <div className="container mx-auto px-4 py-6 flex-grow">
+        <div className="bg-gray-200 p-2 mb-6">
+          <h1 className="text-lg font-medium">Tracking</h1>
+        </div>
+
+        <h2 className="text-xl font-medium mb-4">Award document despatch</h2>
+
+        <div className="grid md:grid-cols-2 gap-6 mb-6">
+          <div className="bg-white border p-6 shadow-sm">
+            <p className="mb-4">
+              Use this page to view the status of award documents couriered from the
+              University of Surrey (United Kingdom) to your delivery address in India.
+            </p>
+            <p className="mb-4">
+              Documents are sent by DTTC using Standard B service. Tracking updates are
+              shown below for each consignment.
+            </p>
+            <p>
+              If you have queries about award document despatch, please contact{' '}
+              <a href="mailto:awards@surrey.ac.uk" className="text-blue-600 hover:underline">
+                MySurrey Hive
+              </a>
+              .
+            </p>
+          </div>
+
+          <div className="bg-white border p-6 shadow-sm">
+            <div className="bg-blue-100 border border-blue-200 p-4 mb-4">
+              <p className="text-blue-800">
+                Estimated delivery date: <strong>1 August 2026</strong>
               </p>
             </div>
-            <div className="text-sm text-gray-600 text-right">
-              <p>
-                Student: <span className="font-medium">Melroy Vernon Menezes</span>
-              </p>
-              <p>
-                ID: <span className="font-medium">6857373</span>
-              </p>
+            <div className="space-y-3 text-sm">
+              <div className="flex justify-between border-b pb-2">
+                <span className="text-gray-600">Deliver to</span>
+                <span className="text-right font-medium max-w-[60%]">
+                  Ashrived House, Venur, India 574242
+                </span>
+              </div>
+              <div className="flex justify-between border-b pb-2">
+                <span className="text-gray-600">Carrier</span>
+                <span>DTTC</span>
+              </div>
+              <div className="flex justify-between border-b pb-2">
+                <span className="text-gray-600">Service</span>
+                <span>Standard B</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Student</span>
+                <span>Melroy Vernon Menezes (6857373)</span>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div className="border border-blue-200 bg-blue-50 px-4 py-3 mb-8 text-sm text-blue-900">
-            <strong>Estimated delivery:</strong> all Standard B consignments below are
-            scheduled to reach India by <strong>29 July 2026</strong> (DTTC).
+        {shipments.map((shipment) => (
+          <div key={shipment.id} className="mb-8">
+            <div className="bg-gray-200 p-2 mb-0">
+              <h3 className="text-base font-medium">{shipment.title}</h3>
+            </div>
+
+            <div className="border border-t-0 p-4 mb-4">
+              <p className="text-sm text-gray-600 mb-4">{shipment.description}</p>
+
+              <table className="w-full text-sm border-collapse">
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-2 pr-4 text-gray-600 w-1/3">Consignment ID</td>
+                    <td className="py-2">{shipment.id}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 pr-4 text-gray-600">Tracking number</td>
+                    <td className="py-2">{shipment.trackingNumber}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 pr-4 text-gray-600">From</td>
+                    <td className="py-2">{shipment.from}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 pr-4 text-gray-600">Deliver to</td>
+                    <td className="py-2">{shipment.to}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 pr-4 text-gray-600">Service</td>
+                    <td className="py-2">
+                      {shipment.carrier} — {shipment.service}
+                    </td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 pr-4 text-gray-600">Weight</td>
+                    <td className="py-2">{shipment.weight}</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 pr-4 text-gray-600">Status</td>
+                    <td className="py-2">{shipment.status}</td>
+                  </tr>
+                  <tr>
+                    <td className="py-2 pr-4 text-gray-600">Expected delivery</td>
+                    <td className="py-2">{shipment.expectedDelivery}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h4 className="font-medium mb-2">Tracking history</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border border-gray-300 border-collapse">
+                <thead>
+                  <tr className="bg-gray-100 text-left">
+                    <th className="border border-gray-300 px-3 py-2 font-medium">Date / time</th>
+                    <th className="border border-gray-300 px-3 py-2 font-medium">Location</th>
+                    <th className="border border-gray-300 px-3 py-2 font-medium">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {shipment.events.map((event) => (
+                    <tr key={event.date}>
+                      <td className="border border-gray-300 px-3 py-2 whitespace-nowrap">
+                        {event.date}
+                      </td>
+                      <td className="border border-gray-300 px-3 py-2">{event.location}</td>
+                      <td className="border border-gray-300 px-3 py-2">{event.detail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
+        ))}
 
-          <div className="space-y-8">
-            {shipments.map((shipment) => (
-              <section
-                key={shipment.id}
-                className="border border-gray-300 bg-white"
-              >
-                <div className="bg-blue-900 text-white px-4 py-3 flex flex-wrap items-center justify-between gap-2">
-                  <div>
-                    <h2 className="text-lg font-semibold">{shipment.title}</h2>
-                    <p className="text-sm text-blue-100">{shipment.description}</p>
-                  </div>
-                  <span className="bg-white/15 px-3 py-1 text-sm">
-                    {shipment.service}
-                  </span>
-                </div>
+        <div className="mt-6 flex justify-center">
+          <button
+            className="bg-blue-700 text-white px-6 py-2 rounded"
+            onClick={() => window.open('mailto:awards@surrey.ac.uk')}
+          >
+            Contact awards support
+          </button>
+        </div>
+      </div>
 
-                <div className="grid md:grid-cols-2 gap-0 border-b border-gray-200">
-                  <dl className="p-4 space-y-2 text-sm border-b md:border-b-0 md:border-r border-gray-200">
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">Consignment ID</dt>
-                      <dd className="font-medium text-right">{shipment.id}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">Tracking number</dt>
-                      <dd className="font-mono font-medium text-right">
-                        {shipment.trackingNumber}
-                      </dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">Carrier</dt>
-                      <dd className="font-medium text-right">{shipment.carrier}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">Service</dt>
-                      <dd className="font-medium text-right">{shipment.service}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">Weight</dt>
-                      <dd className="font-medium text-right">{shipment.weight}</dd>
-                    </div>
-                  </dl>
-
-                  <dl className="p-4 space-y-2 text-sm">
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">From</dt>
-                      <dd className="font-medium text-right">{shipment.from}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">To</dt>
-                      <dd className="font-medium text-right">{shipment.to}</dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">Expected delivery</dt>
-                      <dd className="font-semibold text-right text-green-800">
-                        {shipment.expectedDelivery}
-                      </dd>
-                    </div>
-                    <div className="flex justify-between gap-4">
-                      <dt className="text-gray-500">Current status</dt>
-                      <dd className="font-medium text-right text-amber-800">
-                        {shipment.status}
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-
-                <div className="p-4">
-                  <h3 className="text-sm font-semibold text-gray-800 mb-4 uppercase tracking-wide">
-                    Tracking history
-                  </h3>
-                  <ol className="relative border-l border-gray-300 ml-3 space-y-5">
-                    {shipment.events.map((event, index) => (
-                      <li key={event.date} className="ml-6">
-                        <span
-                          className={`absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border-2 border-white ${
-                            index === 0 ? 'bg-blue-700' : 'bg-gray-400'
-                          }`}
-                        />
-                        <p className="text-xs text-gray-500">{event.date}</p>
-                        <p className="text-sm font-medium text-gray-900">
-                          {event.location}
-                        </p>
-                        <p className="text-sm text-gray-600">{event.detail}</p>
-                      </li>
-                    ))}
-                  </ol>
-                </div>
-              </section>
-            ))}
-          </div>
-
-          <p className="mt-8 text-xs text-gray-500">
-            Tracking information is provided for demonstration purposes. Delivery
-            estimates for DTTC Standard B are indicative and may change after customs
-            release in India.
-          </p>
-        </main>
-
-        <footer className="bg-gray-100 text-xs text-gray-600 py-2 px-6 border-t flex justify-between items-center">
-          <span>Logged in as Melroy Menezes (6857373)</span>
-          <LogoutButton className="text-blue-600 hover:underline">Logout</LogoutButton>
-        </footer>
+      <div className="mt-auto bg-gray-100 border-t py-2 px-4">
+        <div className="container mx-auto flex justify-between text-sm text-gray-600">
+          <div>Logged in: Melroy Menezes (6857373)</div>
+          <LogoutButton>Logout</LogoutButton>
+        </div>
       </div>
     </div>
   );
